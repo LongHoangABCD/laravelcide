@@ -16,6 +16,9 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
+            
+            - name: Build Docker image
+              run: docker build -t laravel-cicd:test .
 
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
