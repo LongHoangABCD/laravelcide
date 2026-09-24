@@ -77,4 +77,4 @@ jobs:
             - name: Push Docker image
               run: |
                   docker push \
-                    ghcr.io/${{ github.repository }}:latest
+                    ghcr.io/longhoangabcd/laravelcide:latest
