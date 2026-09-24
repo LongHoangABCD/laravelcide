@@ -24,8 +24,19 @@ jobs:
                   extensions: mbstring, pdo_mysql, bcmath, gd, zip
                   coverage: none
 
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+
             - name: Install Composer dependencies
               run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+            - name: Install NPM dependencies
+              run: npm ci
+
+            - name: Build frontend
+              run: npm run build
 
             - name: Prepare Laravel
               run: |
